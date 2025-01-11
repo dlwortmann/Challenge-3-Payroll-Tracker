@@ -12,16 +12,22 @@ const collectEmployees = function () {
     const lastName = prompt("Please enter employee's last name:")
     const salary = prompt("Please enter employee's salary:")
 
-    employeesArray.push ({
+    if ((firstName && lastName && !isNaN(salary))) {
+      employeesArray.push ({
       firstName,
       lastName,
       salary
-    })
+    
+    }) 
+    } else {
+      alert("Invalid input. Please check the details and enter again.")
+    }
 
     addEmployee = confirm("Do you want to add another employee?")
   }
   return employeesArray
-};
+}
+
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
