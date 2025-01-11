@@ -10,7 +10,9 @@ const collectEmployees = function () {
   while (addEmployee) {
     const firstName = prompt("Please enter employee's first name:")
     const lastName = prompt("Please enter employee's last name:")
-    const salary = prompt("Please enter employee's salary:")
+    const salaryInput = prompt("Please enter employee's salary:")
+
+    const salary = parseFloat(salaryInput)
 
     if ((firstName && lastName && !isNaN(salary))) {
       employeesArray.push ({
@@ -30,16 +32,18 @@ const collectEmployees = function () {
 
 
 // Display the average salary
-const displayAverageSalary = function (employeesArray) {
-
-
   // TODO: Calculate and display the average salary
+const calcAverageSalary = function (employeesArray) {
   let totalSalary = 0
   for (let i = 0; i < employeesArray.length; i++) {
-    totalSalary += employeesArray[i].salary
+    totalSalary = employeesArray[i].salary
   }
-  const averageSalary = (totalSalary / employeesArray.length)
-  console.log(`The average employee salary between our ${employeesArray.length} is ${averageSalary}`)
+  return (totalSalary / employeesArray.length)
+}
+const displayAverageSalary = function (employeesArray) {
+  const averageSalary = calcAverageSalary(employeesArray)
+  console.log(`The average employee salary between our ${employeesArray.length} employees is ${(averageSalary).toLocaleString('en-US',{ style: 'currency', currency: 'USD'})}`)
+  console.log(`The average employee salary between our ${employeesArray.length} employees is ${Math.round(averageSalary).toLocaleString('en-US',{ style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0})}`)
 };
 
 // Select a random employee
