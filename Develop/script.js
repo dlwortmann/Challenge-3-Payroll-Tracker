@@ -36,7 +36,7 @@ const collectEmployees = function () {
 const calcAverageSalary = function (employeesArray) {
   let totalSalary = 0
   for (let i = 0; i < employeesArray.length; i++) {
-    totalSalary = employeesArray[i].salary
+    totalSalary += employeesArray[i].salary
   }
   return (totalSalary / employeesArray.length)
 }
