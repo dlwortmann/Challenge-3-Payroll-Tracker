@@ -41,8 +41,8 @@ function calcAverageSalary(employeesArray) {
 const displayAverageSalary = function (employeesArray) {
   const averageSalary = calcAverageSalary(employeesArray)
   const salaryAveraged = averageSalary.toFixed(2)
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${(salaryAveraged)}.`)
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${Math.trunc(salaryAveraged)}.`)
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${(salaryAveraged)}`)
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${Math.trunc(salaryAveraged)}`)
 };
 
 // Select a random employee
